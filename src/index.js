@@ -57,10 +57,10 @@ const initVueRouterGuard = function (Vue, { vueRouter, ignoredViews, trackOnNext
     const baseUrl = vueRouter.options.base || '';
     if (trackOnNextTick) {
       Vue.nextTick(() => {
-        Vue.gtm.trackView(name, `${baseUrl}${to.fullPath}`)
+        Vue.gtm.trackView(name, `${baseUrl}${to.path}`)
       })
     } else {
-      Vue.gtm.trackView(name, `${baseUrl}${to.fullPath}`)
+      Vue.gtm.trackView(name, `${baseUrl}${to.path}`)
     }
   })
 
